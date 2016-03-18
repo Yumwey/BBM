@@ -26,7 +26,16 @@ define(
             index: function() {
                 this.indexView.render({});
                 this.indexView.$el.on('scroll',function(event){
-                    var offTop= $(event.target).offset().top;
+                    var offTop= $(event.target).scrollTop();
+                    if(offTop>=49){
+                        $('.am-header-default').css({
+                            'position':'fixed',
+                        });
+                    }else{
+                        $('.am-header-default').css({
+                            'position':'relative'
+                        });
+                    }
                 });
             },
         });
