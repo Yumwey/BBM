@@ -25,19 +25,10 @@ define(
             },
             index: function() {
                 this.indexView.render({});
-                this.indexView.$el.on('scroll',this.callback());
+                this.indexView.$el.on('scroll',function(event){
+                    var offTop= $(event.target).offset().top;
+                });
             },
-
-            //ÆÁÄ»¹ö¶¯
-            callback:function(el){
-                var offTop = el.offset().top;
-                if(offTop && typeof offTop ==="number" ){
-                    console.log('dsaa');
-                }
-                else{
-                    console.log(offTop);
-                }
-            }
         });
     }
 );
