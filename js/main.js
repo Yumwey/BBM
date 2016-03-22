@@ -20,7 +20,8 @@
             'backbone': 'lib/backbone/backbone-0.9.2',
             'Backbone.ModelBinder': 'lib/backbone/plugins/Backbone.ModelBinder-0.1.5',
             'jquery.log': 'lib/jquery/plugins/jquery.log-0.1.0',
-            'ui': 'lib/amazeui.min'
+            'ui': 'lib/amazeui.min',
+            'model':'model'
         },
 
         waitSeconds: has('prod') ? 2000 : 30, //2000 seconds for prod mode on bootstrap and 2 seconds for dev mode

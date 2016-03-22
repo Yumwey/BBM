@@ -10,9 +10,10 @@ define(
         'controller/MobileController',
         'view/BaseMobileView',
         'ui',
-        'text!../template/IndexTemplate.html'
+        'text!../template/IndexTemplate.html',
+        'model/motk'
     ],
-    function($, _, Backbone, MobileController, BaseMobileView, ui, indexTpl) {
+    function($, _, Backbone, MobileController, BaseMobileView, ui, indexTpl,Motk) {
 
         return MobileController.extend({
             initialize: function() {
@@ -22,19 +23,26 @@ define(
                     controller: this,
                     textTemplate:indexTpl
                 });
+
+                _.bindAll(this,'init');
+                new Motk({cb:this.init});
             },
-            index: function() {
-                this.indexView.render({});
+
+            datas:{
+                indexData:null
+            },
+            init: function(params){
+                this.index(params);
+            },
+            index: function(renderData) {
+                console.log(renderData.length);
+                this.indexView.render({data:renderData.toJSON()});
                 this.indexView.$el.on('scroll',function(event){
                     var offTop= $(event.target).scrollTop();
                     if(offTop>=49){
-                        $('.am-header-default').css({
-                            'position':'fixed',
-                        });
+                        $('.am-header-default').addClass('fix');
                     }else{
-                        $('.am-header-default').css({
-                            'position':'relative'
-                        });
+                        $('.am-header-default').removeClass('fix');
                     }
                 });
             },

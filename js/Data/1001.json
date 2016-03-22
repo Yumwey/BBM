@@ -1,0 +1,6 @@
+{
+  "id": "1001",
+  "title": "backbone是前端MVC的利器",
+  "clsname":"科技",
+  "desc":"&nbsp;&nbsp;&nbsp;&nbsp;Backbone.js 是一种重量级javascript  MVC 应用框架。</br>&nbsp;&nbsp;&nbsp;&nbsp;它提供一整套丰富的API用于枚举功能，通过RESTful JSON接口进行数据交互和View进行事件处理，功能强大而稳定。"
+}

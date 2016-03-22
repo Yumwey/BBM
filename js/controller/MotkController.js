@@ -9,13 +9,15 @@ define(
     'view/BaseMobileView',
     'ui',
     'text!../template/Motk/index.html',
-    ],function($,_,Backbone,MobileController,BaseMobileView,ui,index){
+    'text!../template/Motk/other.html',
+    ],function($,_,Backbone,MobileController,BaseMobileView,ui,index,other){
          return MobileController.extend({
 
              //初始化视图
              initialize:function(){
                  var views={
-                     indexView:index
+                     indexView:index,
+                     otherView:other
                  };
                  /**
                   * 视图页渲染
@@ -37,6 +39,9 @@ define(
                  this.indexView.$el.on('click',this.doms.btns,function(){
                      alert('CLikc');
                  })
+             },
+             other:function(){
+                 this.otherView.render({});
              }
          })
     }
