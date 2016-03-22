@@ -27,15 +27,11 @@ define(
                 _.bindAll(this,'init');
                 new Motk({cb:this.init});
             },
-
-            datas:{
-                indexData:null
-            },
             init: function(params){
                 this.index(params);
             },
             index: function(renderData) {
-                console.log(renderData.length);
+                console.log(renderData);
                 this.indexView.render({data:renderData.toJSON()});
                 this.indexView.$el.on('scroll',function(event){
                     var offTop= $(event.target).scrollTop();

@@ -32,12 +32,13 @@
 
             <div class="am-list-news-bd">
                 <ul class="am-list">
-
+                <% for(var i = 0; i< data.length; i++){ %>
+                    <% var item = data[i]; %>
                     <li class="am-g am-list-item-dated">
-                        <a href="##" class="am-list-item-hd ">标题：></a>
+                        <a href="##" class="am-list-item-hd ">标题：<%= item.title %></a>
                         <span class="am-list-date">2013-09-18</span>
                     </li>
-
+                <% } %>
                 </ul>
             </div>
 
